@@ -36,12 +36,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("HHHHHHHHHHHHHHHH", ExpectedResult = 135)]
         [TestCase("PPPPPP", ExpectedResult = 250)]
         [TestCase("QQQQ", ExpectedResult = 110)]
+        [TestCase("RRRQQ", ExpectedResult = 180)]
         public int ComputePrice(string skus)
         {
             return CheckoutSolution.ComputePrice(skus);
         }
     }
 }
+
 
 
 

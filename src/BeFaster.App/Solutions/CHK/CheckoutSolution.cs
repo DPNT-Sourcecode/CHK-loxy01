@@ -56,6 +56,8 @@ namespace BeFaster.App.Solutions.CHK
             ApplyOfferE(items);
             ApplyOfferF(items);
             ApplyOfferN(items);
+            ApplyOfferR(items);
+            ApplyOfferU(items);
 
             int sum = 0;
             foreach (var item in items)
@@ -89,6 +91,16 @@ namespace BeFaster.App.Solutions.CHK
             }
             return sum;
 
+        }
+
+        private static void ApplyOfferR(Dictionary<char, int> items)
+        {
+            if (items.ContainsKey('R') && items.ContainsKey('Q'))
+            {
+                var countOfItemE = items['R'];
+                var freeItemCount = countOfItemE / 3;
+                items['Q'] = (items['Q'] - freeItemCount) > 0 ? items['Q'] - freeItemCount : 0;
+            }
         }
 
         private static int ApplyOfferQ(KeyValuePair<char, int> item)
@@ -180,6 +192,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
