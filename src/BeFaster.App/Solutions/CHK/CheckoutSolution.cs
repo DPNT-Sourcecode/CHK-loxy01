@@ -94,7 +94,7 @@ namespace BeFaster.App.Solutions.CHK
         private static int ApplyOfferQ(KeyValuePair<char, int> item)
         {
             int count = item.Value;
-            var offerPrice = (count / 3) * 180;
+            var offerPrice = (count / 3) * 80;
             var normalPrice = (count % 3) * prices[item.Key];
             return (offerPrice + normalPrice);
 
@@ -157,12 +157,7 @@ namespace BeFaster.App.Solutions.CHK
             return (offer1Price + offer2Price + normalPrice);
             
         }
-
-        private static void ApplyOfferH(Dictionary<char, int> items)
-        {
-
-        }
-
+                
         private static void ApplyOfferF(Dictionary<char, int> items)
         {
             if (items.ContainsKey('F') && items['F'] >= 3)
@@ -185,6 +180,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
