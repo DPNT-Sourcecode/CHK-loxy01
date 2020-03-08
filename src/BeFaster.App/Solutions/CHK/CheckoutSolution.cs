@@ -44,9 +44,11 @@ namespace BeFaster.App.Solutions.CHK
                 if (item.Key == 'A')
                 {
                     int count = item.Value;
-                    var offerPrice = (count / 3) * 130;
-                    var normalPrice = (count % 3) * prices[item.Key];
-                    sum += (offerPrice + normalPrice);
+                    var offer1Price = (count / 5) * 200;
+                    var remaining = count % 5;
+                    var offer2Price = (remaining / 3) * 130;
+                    var normalPrice = (remaining % 3) * prices[item.Key];
+                    sum += (offer1Price + offer2Price + normalPrice);
                 }
                 else if (item.Key == 'B')
                 {
@@ -63,6 +65,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
