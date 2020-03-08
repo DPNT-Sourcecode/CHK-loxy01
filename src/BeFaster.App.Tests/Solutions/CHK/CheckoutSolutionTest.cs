@@ -12,7 +12,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
     public class CheckoutSolutionTest
     {
         [TestCase("1", ExpectedResult = -1)]
-        [TestCase("Z", ExpectedResult = 50)]
+        [TestCase("Z", ExpectedResult = 21)]
         [TestCase("A", ExpectedResult =50)]
         [TestCase("B", ExpectedResult = 30)]
         [TestCase("C", ExpectedResult = 20)]
@@ -47,4 +47,5 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 

@@ -90,11 +90,23 @@ namespace BeFaster.App.Solutions.CHK
                 {
                     sum += ApplyOfferV(item);
                 }
+                else if(item.Key == 'S' || item.Key == 'T' || item.Key == 'X' || item.Key == 'Y' || item.Key == 'Z' )
+                {
+
+                }
                 else
                     sum += item.Value * prices[item.Key];
             }
+
+            sum += AddMultiBuyOffer(items);
+
             return sum;
 
+        }
+
+        private static int AddMultiBuyOffer(Dictionary<char, int> items)
+        {
+            return 0;
         }
 
         private static int ApplyOfferV(KeyValuePair<char, int> item)
@@ -216,4 +228,5 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
