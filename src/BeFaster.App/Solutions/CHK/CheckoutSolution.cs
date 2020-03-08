@@ -114,9 +114,14 @@ namespace BeFaster.App.Solutions.CHK
 
             var total = ItemsIn3 * 45;
 
+            
             if (items['X'] >= 0)
             {
-                total += 
+                total += prices['X'];
+                remaining-- ;
+            }
+            else if()
+            {
 
             }
 
@@ -242,4 +247,5 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
