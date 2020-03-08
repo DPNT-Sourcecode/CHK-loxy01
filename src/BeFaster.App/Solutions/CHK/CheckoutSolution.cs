@@ -112,9 +112,11 @@ namespace BeFaster.App.Solutions.CHK
         private static int ApplyOfferV(KeyValuePair<char, int> item)
         {
             int count = item.Value;
-            var offer2Price = (count / 2) * 120;
-            var normalPrice = (count % 2) * prices[item.Key];
-            return (offer2Price + normalPrice);
+            var offer1Price = (count / 3) * 130;
+            var remaining = count % 3;
+            var offer2Price = (remaining / 2) * 90;
+            var normalPrice = (remaining % 2) * prices[item.Key];
+            return (offer1Price + offer2Price + normalPrice);
         }
 
         private static void ApplyOfferU(Dictionary<char, int> items)
@@ -226,6 +228,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
