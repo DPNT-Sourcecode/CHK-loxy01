@@ -10,9 +10,14 @@ namespace BeFaster.App.Solutions.CHK
                 return 50;
             else if (skus == "B")
                 return 30;
+            else if (skus == "C")
+                return 20;
+            else if (skus == "D")
+                return 15;
             else
                 return -1;
         }
     }
 }
+
 
