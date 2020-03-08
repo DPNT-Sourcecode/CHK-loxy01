@@ -1,4 +1,5 @@
 ﻿using BeFaster.Runner.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -54,31 +55,51 @@ namespace BeFaster.App.Solutions.CHK
 
             ApplyOfferE(items);
             ApplyOfferF(items);
+            ApplyOfferH(items);
 
             int sum = 0;
             foreach (var item in items)
             {
                 if (item.Key == 'A')
                 {
-                    int count = item.Value;
-                    var offer1Price = (count / 5) * 200;
-                    var remaining = count % 5;
-                    var offer2Price = (remaining / 3) * 130;
-                    var normalPrice = (remaining % 3) * prices[item.Key];
-                    sum += (offer1Price + offer2Price + normalPrice);
+                    int totalA = ApplyOfferA(item);
+                    sum += totalA;
                 }
                 else if (item.Key == 'B')
                 {
-                    int count = item.Value;
-                    var offerPrice = (count / 2) * 45;
-                    var normalPrice = (count % 2) * prices[item.Key];
-                    sum += (offerPrice + normalPrice);
+                    int totalB = ApplyOfferB(item);
+                    sum += totalB;
                 }
                 else
                     sum += item.Value * prices[item.Key];
             }
             return sum;
 
+        }
+
+        private static int ApplyOfferB(KeyValuePair<char, int> item)
+        {
+            int count = item.Value;
+            var offerPrice = (count / 2) * 45;
+            var normalPrice = (count % 2) * prices[item.Key];
+            var totalB = (offerPrice + normalPrice);
+            return totalB;
+        }
+
+        private static int ApplyOfferA(KeyValuePair<char, int> item)
+        {
+            int count = item.Value;
+            var offer1Price = (count / 5) * 200;
+            var remaining = count % 5;
+            var offer2Price = (remaining / 3) * 130;
+            var normalPrice = (remaining % 3) * prices[item.Key];
+            var totalA = (offer1Price + offer2Price + normalPrice);
+            return totalA;
+        }
+
+        private static void ApplyOfferH(Dictionary<char, int> items)
+        {
+            
         }
 
         private static void ApplyOfferF(Dictionary<char, int> items)
@@ -104,6 +125,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
