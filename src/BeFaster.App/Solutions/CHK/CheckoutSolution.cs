@@ -52,20 +52,8 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            if (items.ContainsKey('E') && items.ContainsKey('B'))
-            {
-                var countOfItemE = items['E'];
-                var freeBs = countOfItemE / 2;
-
-                items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
-            }
-
-            if (items.ContainsKey('F') && items['F'] >= 3)
-            {
-                var countOfF = items['F'];
-                var freeFs = countOfF / 3;
-                items['F'] = items['F'] - freeFs;
-            }
+            ApplyOfferE(items);
+            ApplyOfferF(items);
 
             int sum = 0;
             foreach (var item in items)
@@ -92,7 +80,30 @@ namespace BeFaster.App.Solutions.CHK
             return sum;
 
         }
+
+        private static void ApplyOfferF(Dictionary<char, int> items)
+        {
+            if (items.ContainsKey('F') && items['F'] >= 3)
+            {
+                var countOfF = items['F'];
+                var freeFs = countOfF / 3;
+                items['F'] = items['F'] - freeFs;
+            }
+        }
+
+        private static void ApplyOfferE(Dictionary<char, int> items)
+        {
+            if (items.ContainsKey('E') && items.ContainsKey('B'))
+            {
+                var countOfItemE = items['E'];
+                var freeBs = countOfItemE / 2;
+
+                items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
+            }
+        }
+
     }
 }
+
 
 
