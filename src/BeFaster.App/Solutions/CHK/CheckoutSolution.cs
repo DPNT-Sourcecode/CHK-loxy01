@@ -70,11 +70,27 @@ namespace BeFaster.App.Solutions.CHK
                     int totalB = ApplyOfferB(item);
                     sum += totalB;
                 }
+                else if(item.Key == 'H')
+                {
+                    int totalH = ApplyOfferH(item);
+                    sum += totalH
+                }
                 else
                     sum += item.Value * prices[item.Key];
             }
             return sum;
 
+        }
+
+        private static int ApplyOfferH(KeyValuePair<char, int> item)
+        {
+            int count = item.Value;
+            var offer1Price = (count / 5) * 200;
+            var remaining = count % 5;
+            var offer2Price = (remaining / 3) * 130;
+            var normalPrice = (remaining % 3) * prices[item.Key];
+            var totalH = (offer1Price + offer2Price + normalPrice);
+            return totalH;
         }
 
         private static int ApplyOfferB(KeyValuePair<char, int> item)
@@ -125,6 +141,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
