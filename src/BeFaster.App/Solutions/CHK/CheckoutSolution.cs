@@ -31,10 +31,12 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            var countOfItemE = items['E'];
-            var freeBs = countOfItemE / 2;
-
-            items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
+            if (items.ContainsKey('E'))
+            {
+                var countOfItemE = items['E'];
+                var freeBs = countOfItemE / 2;
+                items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
+            }
 
             int sum = 0;
             foreach (var item in items)
@@ -61,6 +63,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
