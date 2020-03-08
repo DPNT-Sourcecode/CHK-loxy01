@@ -30,19 +30,28 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            //            return items.Sum(item => prices[item.Key] * item.Value);
             int sum = 0;
             foreach (var item in items)
             {
-                if(item.Key == 'A')
+                if (item.Key == 'A')
                 {
                     var offerPrice = (item.Value / 3) * 130;
-                    var normalPrice = (item.Value % 3) * 50;
+                    var normalPrice = (item.Value % 3) * prices[item.Key];
                     sum += (offerPrice + normalPrice);
                 }
+                else if (item.Key == 'B')
+                {
+                    var offerPrice = (item.Value / 2) * 45;
+                    var normalPrice = (item.Value % 2) * prices[item.Key];
+                    sum += (offerPrice + normalPrice);
+                }
+                else
+                    sum += item.Value * prices[item.Key];
             }
+            return sum;
 
         }
     }
 }
+
 
