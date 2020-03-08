@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using BeFaster.App.Solutions.CHK;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace BeFaster.App.Tests.Solutions.CHK
     public class CheckoutSolutionTest
     {
         [TestCase("A", ExpectedResult =50)]
-        public void CalculateCorrectPrice(string skus)
+        [TestCase("Z", ExpectedResult = -1)]
+        [TestCase("B", ExpectedResult = 30)]
+        public int ComputePrice(string skus)
         {
-
+            return CheckoutSolution.ComputePrice(skus);
         }
     }
 }
+

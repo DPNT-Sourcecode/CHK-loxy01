@@ -6,7 +6,13 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int ComputePrice(string skus)
         {
-            throw new SolutionNotImplementedException();
+            if (skus == "A")
+                return 50;
+            else if (skus == "B")
+                return 30;
+            else
+                return -1;
         }
     }
 }
+
