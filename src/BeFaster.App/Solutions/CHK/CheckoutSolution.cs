@@ -12,7 +12,8 @@ namespace BeFaster.App.Solutions.CHK
             {'B', 30 },
             {'C', 20},
             {'D', 15 },
-            {'E', 40 }
+            {'E', 40 },
+            { 'F', 10 }
         };
 
         public static int ComputePrice(string skus)
@@ -37,6 +38,13 @@ namespace BeFaster.App.Solutions.CHK
                 var freeBs = countOfItemE / 2;
                 
                 items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
+            }
+
+            if(items.Contains('F'))
+            {
+                var countOfF = items['F'];
+                var freeFs = countOfF / 2;
+                items['F'] = items['F'] - freeFs;
             }
 
             int sum = 0;
@@ -66,6 +74,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
