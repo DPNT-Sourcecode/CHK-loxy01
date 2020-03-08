@@ -36,14 +36,16 @@ namespace BeFaster.App.Solutions.CHK
             {
                 if (item.Key == 'A')
                 {
-                    var offerPrice = (item.Value / 3) * 130;
-                    var normalPrice = (item.Value % 3) * prices[item.Key];
+                    int count = item.Value;
+                    var offerPrice = (count / 3) * 130;
+                    var normalPrice = (count % 3) * prices[item.Key];
                     sum += (offerPrice + normalPrice);
                 }
                 else if (item.Key == 'B')
                 {
-                    var offerPrice = (item.Value / 2) * 45;
-                    var normalPrice = (item.Value % 2) * prices[item.Key];
+                    int count = item.Value;
+                    var offerPrice = (count / 2) * 45;
+                    var normalPrice = (count % 2) * prices[item.Key];
                     sum += (offerPrice + normalPrice);
                 }
                 else
@@ -54,4 +56,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
