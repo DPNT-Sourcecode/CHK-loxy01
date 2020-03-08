@@ -15,8 +15,23 @@ namespace BeFaster.App.Solutions.CHK
 
         public static int ComputePrice(string skus)
         {
+            var items = new Dictionary<char, int>();
+            foreach (var sku in skus)
+            {
+                if (!prices.ContainsKey(sku))
+                    return -1;
+                else
+                {
+                    if (!items.ContainsKey(sku))
+                        items.Add(sku, 1);
+                    else
+                        items[sku] += 1;
+                }
+            }
+
+
             int sum = 0;
-            foreach(var sku in skus)
+            foreach (var sku in skus)
             {
                 if (prices.ContainsKey(sku))
                     sum += prices[sku];
@@ -27,6 +42,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
