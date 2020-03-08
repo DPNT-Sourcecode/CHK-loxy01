@@ -93,6 +93,16 @@ namespace BeFaster.App.Solutions.CHK
 
         }
 
+        private static void ApplyOfferU(Dictionary<char, int> items)
+        {
+            if (items.ContainsKey('U') && items['U'] >= 4)
+            {
+                var countOfF = items['U'];
+                var freeItems = countOfF / 4;
+                items['U'] = items['U'] - freeItems;
+            }
+        }
+
         private static void ApplyOfferR(Dictionary<char, int> items)
         {
             if (items.ContainsKey('R') && items.ContainsKey('Q'))
@@ -192,6 +202,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
