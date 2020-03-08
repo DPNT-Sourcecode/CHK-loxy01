@@ -31,10 +31,11 @@ namespace BeFaster.App.Solutions.CHK
                 }
             }
 
-            if (items.ContainsKey('E'))
+            if (items.ContainsKey('E') && items.ContainsKey('B'))
             {
                 var countOfItemE = items['E'];
                 var freeBs = countOfItemE / 2;
+                
                 items['B'] = (items['B'] - freeBs) > 0 ? items['B'] - freeBs : 0;
             }
 
@@ -65,6 +66,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
