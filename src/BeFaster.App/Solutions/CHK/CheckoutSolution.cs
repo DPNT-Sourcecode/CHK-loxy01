@@ -90,7 +90,7 @@ namespace BeFaster.App.Solutions.CHK
                 {
                     sum += ApplyOfferV(item);
                 }
-                else if(item.Key == 'S' || item.Key == 'T' || item.Key == 'X' || item.Key == 'Y' || item.Key == 'Z' )
+                else if (item.Key == 'S' || item.Key == 'T' || item.Key == 'X' || item.Key == 'Y' || item.Key == 'Z')
                 {
 
                 }
@@ -106,17 +106,8 @@ namespace BeFaster.App.Solutions.CHK
 
         private static int AddMultiBuyOffer(Dictionary<char, int> items)
         {
-            var count = 0;
-
-            var totalZItems = items['Z'];
-            var ZItemsCount = totalZItems / 3;
-            var remainingZItems = totalZItems % 3;
-
-            var totalSItems = items['S'];
-            var SItemsCount = totalSItems / 3;
-            var remainingSItems = totalSItems % 3;
-
-
+            var totalItems = items['Z'] + items['S'] + items['T'] + items['Y'] + items['X'];
+                
 
 
         }
@@ -240,9 +231,3 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
-
-
-
-
-
-
