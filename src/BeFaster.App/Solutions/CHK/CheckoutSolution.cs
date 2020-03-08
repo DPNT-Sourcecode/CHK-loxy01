@@ -31,19 +31,11 @@ namespace BeFaster.App.Solutions.CHK
             }
 
             return items.Sum(item => prices[item.Key] * item.Value);
-
-            //int sum = 0;
-            //foreach (var sku in skus)
-            //{
-            //    if (prices.ContainsKey(sku))
-            //        sum += prices[sku];
-            //    else
-            //        return -1;
-            //}
-            //return sum;
+                        
         }
     }
 }
+
 
 
 
