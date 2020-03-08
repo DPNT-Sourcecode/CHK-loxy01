@@ -106,14 +106,25 @@ namespace BeFaster.App.Solutions.CHK
 
         private static int AddMultiBuyOffer(Dictionary<char, int> items)
         {
-            var totalItems = items['Z'] + items['S'] + items['T'] + items['Y'] + items['X'];
+            var totalItems = 0;
+            if (items.ContainsKey('Z'))
+                totalItems += items['Z'];
+            if (items.ContainsKey('S'))
+                totalItems += items['S'];
+            if (items.ContainsKey('T'))
+                totalItems += items['T'];
+            if (items.ContainsKey('Y'))
+                totalItems += items['Y'];
+            if (items.ContainsKey('X'))
+                totalItems += items['X'];
+                        
             var ItemsIn3 = (totalItems / 3) * 45;
             var remaining = totalItems % 3;
             var total = ItemsIn3 * 45;
 
             if (remaining > 0)
             {
-                if (items['X'] > 0)
+                if (items.ContainsKey('X') && items['X'] > 0)
                 {
                     var rem = remaining;
                     remaining -= items['X'];
@@ -126,7 +137,7 @@ namespace BeFaster.App.Solutions.CHK
             }
             if (remaining > 0)
             {
-                if (items['Y'] > 0)
+                if (items.ContainsKey('Y') && items['Y'] > 0)
                 {
                     var rem = remaining;
                     remaining -= items['Y'];
@@ -140,7 +151,7 @@ namespace BeFaster.App.Solutions.CHK
 
             if (remaining > 0)
             {
-                if (items['T'] > 0)
+                if (items.ContainsKey('T') && items['T'] > 0)
                 {
                     var rem = remaining;
                     remaining -= items['T'];
@@ -153,7 +164,7 @@ namespace BeFaster.App.Solutions.CHK
             }
             if (remaining > 0)
             {
-                if (items['S'] > 0)
+                if (items.ContainsKey('S') && items['S'] > 0)
                 {
                     var rem = remaining;
                     remaining -= items['S'];
@@ -166,7 +177,7 @@ namespace BeFaster.App.Solutions.CHK
             }
             if (remaining > 0)
             {
-                if (items['Z'] > 0)
+                if (items.ContainsKey('Z') && items['Z'] > 0)
                 {
                     var rem = remaining;
                     remaining -= items['Z'];
@@ -300,6 +311,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
