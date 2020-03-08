@@ -111,16 +111,72 @@ namespace BeFaster.App.Solutions.CHK
             var remaining = totalItems % 3;
             var total = ItemsIn3 * 45;
 
-            if (items['X'] > 0)
+            if (remaining > 0)
             {
-                var rem = remaining;
-                remaining -= items['X'];
-                if (remaining <= 0)
+                if (items['X'] > 0)
                 {
-                    total += rem * prices['X'];
+                    var rem = remaining;
+                    remaining -= items['X'];
+                    if (remaining <= 0)
+                    {
+                        total += rem * prices['X'];
+                    }
                 }
+
+            }
+            if (remaining > 0)
+            {
+                if (items['Y'] > 0)
+                {
+                    var rem = remaining;
+                    remaining -= items['Y'];
+                    if (remaining <= 0)
+                    {
+                        total += rem * prices['Y'];
+                    }
+                }
+
             }
 
+            if (remaining > 0)
+            {
+                if (items['T'] > 0)
+                {
+                    var rem = remaining;
+                    remaining -= items['T'];
+                    if (remaining <= 0)
+                    {
+                        total += rem * prices['T'];
+                    }
+                }
+
+            }
+            if (remaining > 0)
+            {
+                if (items['S'] > 0)
+                {
+                    var rem = remaining;
+                    remaining -= items['S'];
+                    if (remaining <= 0)
+                    {
+                        total += rem * prices['S'];
+                    }
+                }
+
+            }
+            if (remaining > 0)
+            {
+                if (items['Z'] > 0)
+                {
+                    var rem = remaining;
+                    remaining -= items['Z'];
+                    if (remaining <= 0)
+                    {
+                        total += rem * prices['Z'];
+                    }
+                }
+
+            }
 
             return total;
         }
@@ -244,6 +300,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
