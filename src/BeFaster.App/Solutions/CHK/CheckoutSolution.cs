@@ -11,7 +11,8 @@ namespace BeFaster.App.Solutions.CHK
             {'A', 50 },
             {'B', 30 },
             {'C', 20},
-            {'D', 15 }
+            {'D', 15 },
+            {'E', 40 }
         };
 
         public static int ComputePrice(string skus)
@@ -53,3 +54,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
