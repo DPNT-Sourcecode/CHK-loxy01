@@ -107,9 +107,20 @@ namespace BeFaster.App.Solutions.CHK
         private static int AddMultiBuyOffer(Dictionary<char, int> items)
         {
             var totalItems = items['Z'] + items['S'] + items['T'] + items['Y'] + items['X'];
-                
 
+            var ItemsIn3 = totalItems / 3 * 45;
 
+            var remaining = totalItems % 3;
+
+            var total = ItemsIn3 * 45;
+
+            if (items['X'] >= 0)
+            {
+                total += 
+
+            }
+
+            return total;
         }
 
         private static int ApplyOfferV(KeyValuePair<char, int> item)
@@ -231,3 +242,4 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
