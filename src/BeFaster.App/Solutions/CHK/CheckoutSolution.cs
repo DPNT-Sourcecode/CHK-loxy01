@@ -111,13 +111,15 @@ namespace BeFaster.App.Solutions.CHK
             var remaining = totalItems % 3;
             var total = ItemsIn3 * 45;
 
-            int rem = remaining - items['X'];
-            if (rem <= 0)
+            if (items['X'] > 0)
             {
-                total += remaining * items['X'];
-                remaining = 0;
+                var rem = remaining;
+                remaining -= items['X'];
+                if (remaining <= 0)
+                {
+                    total += rem * prices['X'];
+                }
             }
-            
 
 
             return total;
@@ -242,6 +244,7 @@ namespace BeFaster.App.Solutions.CHK
 
     }
 }
+
 
 
 
