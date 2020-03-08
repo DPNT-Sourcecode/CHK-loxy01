@@ -43,7 +43,7 @@ namespace BeFaster.App.Solutions.CHK
             if(items.ContainsKey('F') && items['F'] >= 3)
             {
                 var countOfF = items['F'];
-                var freeFs = countOfF / 2;
+                var freeFs = countOfF / 3;
                 items['F'] = items['F'] - freeFs;
             }
 
@@ -74,3 +74,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
